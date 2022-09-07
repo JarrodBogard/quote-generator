@@ -8,10 +8,10 @@ const {
   remove,
 } = require("../controllers/customerControllers");
 
-router.get("/customers", list);
-router.get("/customers/:id", show);
-router.post("/customers", create);
-router.post("/customers/:id", update);
-router.post("/customers/:id", remove);
+router.get("", list);
+router.get("/:id", show);
+router.post("", create);
+router.post("/:id", update);
+router.post("/:id", remove);
 
 module.exports = router;
