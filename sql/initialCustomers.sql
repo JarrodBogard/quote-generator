@@ -29,7 +29,7 @@ VALUES
 INSERT INTO trades
 	(title, retail_price, user_id)
 VALUES 
-  ("Metal Gear","9.99", "test@test.com"),
-  ("Mickey Mousecapades","19.99", "test@test.com"),
-  ("Earthworm Jim","54.99", "test@test.com");
+  ("Metal Gear","9.99", 1),
+  ("Mickey Mousecapades","19.99", 1),
+  ("Earthworm Jim","54.99", 2);
 
