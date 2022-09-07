@@ -6,7 +6,7 @@ const {
   create,
   update,
   remove,
-} = require("../controllers/customerControllers");
+} = require("../controllers/tradeControllers");
 
 router.get("/", list);
 router.get("/:id", show);

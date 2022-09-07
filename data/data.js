@@ -36,7 +36,6 @@ module.exports = {
       id: 1,
       title: "Super Smash bros",
       retail_price: "59.99",
-      //? Add in date and trade_value????
       user_id: 3,
     },
     {
@@ -44,6 +43,12 @@ module.exports = {
       title: "Metroid Dread",
       retail_price: "24.99",
       user_id: 2,
+    },
+    {
+      id: 3,
+      title: "Metal Gear",
+      retail_price: "9.99",
+      user_id: 3,
     },
   ],
 };
