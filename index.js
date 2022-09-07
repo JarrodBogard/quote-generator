@@ -1,7 +1,5 @@
 const express = require("express");
 const app = express();
-const { customers, trades } = require("./data/data.js");
-const { v4 } = require("uuid");
 const customRoutes = require("./routes/customerRoutes");
 const tradeRoutes = require("./routes/tradeRoutes");
 

@@ -1,10 +1,6 @@
-const { customers } = require("../data/data");
 const pool = require("../sql/connection");
 const mysql = require("mysql");
 
-// const list = (req, res) => {
-//   res.json(customers);
-// };
 const list = (req, res) => {
   pool.query("SELECT * FROM customers", (err, rows) => {
     if (err) {
@@ -15,10 +11,6 @@ const list = (req, res) => {
   });
 };
 
-// const show = (req, res) => {
-//   const user = customers.find((x) => x.id === req.params.id);
-//   res.json(user);
-// };
 const show = (req, res) => {
   pool.query(
     `SELECT * FROM customers WHERE id = ${req.params.id}`,
@@ -31,18 +23,6 @@ const show = (req, res) => {
     }
   );
 };
-
-// const create = (req, res) => {
-//   const { body } = req;
-
-//   let newUser = {
-//     ...body,
-//     id: v4(),
-//   };
-
-//   customers.push(newUser);
-//   res.send(newUser);
-// };
 
 const create = (req, res) => {
   const { first_name, last_name, email } = req.body;
@@ -60,20 +40,6 @@ const create = (req, res) => {
   );
 };
 
-// const update = (req, res) => {
-//   const user = customers.find((x) => x.id === req.params.id);
-//   const userIndex = customers.findIndex((x) => x.id === req.params.id);
-
-//   const { body } = req;
-
-//   let newUser = {
-//     ...user,
-//     ...body,
-//   };
-
-//   customers.splice(userIndex, 1, newUser);
-//   res.send(customers);
-// };
 const update = (req, res) => {
   let sql = "UPDATE ?? SET ? WHERE ?? = ?";
   sql = mysql.format(sql, ["customers", req.body, "id", req.params.id]);
