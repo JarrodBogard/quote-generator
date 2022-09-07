@@ -1,7 +1,17 @@
 const { customers } = require("../data/data");
+const pool = require("../sql/connection");
 
+// const list = (req, res) => {
+//   res.json(customers);
+// };
 const list = (req, res) => {
-  res.json(customers);
+  pool.query("SELECT * FROM customers", (err, rows) => {
+    if (err) {
+      console.log({ message: "Error occurred: " + err });
+      return res.status(500).send("An unexpected error occurred");
+    }
+    res.json(rows);
+  });
 };
 
 const show = (req, res) => {
@@ -49,5 +59,5 @@ module.exports = {
   show,
   create,
   update,
-  remove
+  remove,
 };
